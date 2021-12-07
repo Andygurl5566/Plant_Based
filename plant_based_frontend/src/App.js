@@ -2,6 +2,8 @@
 import './App.css';
 import { Outlet, Link, Route, Routes } from 'react-router-dom'
 import { Navbar, Container } from 'react-bootstrap';
+import Home from './Components/Home';
+import Login from './Components/Login';
 
 function App() {
   return (
