@@ -2,7 +2,7 @@ class GardensController < ApplicationController
    
 
     def index
-        garden = Garden.all 
+        garden = current_user.gardens
         render json: garden
     end
 
@@ -38,5 +38,12 @@ class GardensController < ApplicationController
 
     def garden_params
         params.permit(:name, :location, :user_id)
+
     end
+
+    def is_authorized
+        permitted = current_user.admin? || @item.seller == current_user
+        render json: "Accessibility is not permitted", status: :forbidden unless permitted
+      end
+      
 end

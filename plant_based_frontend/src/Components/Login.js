@@ -27,7 +27,9 @@ const Login= ({setCurrentUser}) => {
       console.log(res)
       if (res.ok) {
         res.json().then((user) => {
-          setCurrentUser(user);
+         
+          setCurrentUser(user); 
+          console.log(user.id)
         });
       } else {
         res.json().then((errors) => {
