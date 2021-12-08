@@ -12,6 +12,8 @@ function Plants () {
             .then((plants) => {
                 // console.log(users)
                 setPlants(plants)
+                console.log(plants)
+                
             })
     }, [])
 
@@ -26,7 +28,7 @@ function Plants () {
         <button class= "redirect_btn"> <Link class="redirect" to="/gardens"> Back </Link></button>
 
         <div id="plantCardsDiv">
-       
+        {console.log(plantList)}
         {plantList.map((plant) => {
             return (
                 <div    >
