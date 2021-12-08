@@ -23,13 +23,13 @@ function App() {
 
 
   return (
-    <>
+    <div id="body">
       <Navbar>
-          <Container>
+          <Container id="nav_bar">
             <h1> plant-based 🌱 </h1> 
-            <Link to="/"> home </Link>
-            <Link to="/gardens"> gardens </Link>
-            <Link to="/plants"> plants </Link>
+            <Link class="nav_bar_buttons" to="/"> home </Link>
+            <Link class="nav_bar_buttons" to="/gardens"> my gardens </Link>
+            <Link class="nav_bar_buttons" to="/plants"> my plants </Link>
 
           </Container>
       </Navbar>
@@ -55,7 +55,7 @@ function App() {
         </Routes>
       </Container>
 
-    </>
+    </div>
   );
 }
 
