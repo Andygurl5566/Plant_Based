@@ -50,7 +50,7 @@ function handleToggle(){
 
                 <button onClick={handleToggle} class ="redirect_btn">Edit</button>
                 <button onClick={handleDeleteGarden} class ="redirect_btn">Delete</button>
-                <EditGardenForm garden={garden} id={id}/> 
+                {toggle == false? "" : <EditGardenForm garden={garden} id={id}/> }
                 {/* // above link should be conditionally rendered based on whether or not you click the view button */}
                 
             </Card.Body>
