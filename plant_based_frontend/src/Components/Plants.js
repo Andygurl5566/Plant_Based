@@ -17,6 +17,12 @@ function Plants () {
             })
     }, [])
 
+    function handleDeletePlants(deletedPlants) {
+        setPlants((plants) =>
+          plants.filter((plants) => plants.id !== deletedPlants.id)
+        );
+      }
+
 
 
     return ( 
@@ -31,8 +37,9 @@ function Plants () {
         {console.log(plantList)}
         {plantList.map((plant) => {
             return (
-                <div    >
-                    <PlantCard plant={plant}/>
+                <div>
+                    <PlantCard plant={plant}
+                    onDeletePlants={handleDeletePlants}/>
                 </div>
             )})
             }
