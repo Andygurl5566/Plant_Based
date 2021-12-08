@@ -1,7 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
+import GardenDetail from "./Components/GardenDetail";
 import { Outlet, Link, Route, Routes } from 'react-router-dom'
 import { Navbar, Container } from 'react-bootstrap';
 import Home from './Components/Home';
@@ -11,7 +11,6 @@ import GardenForm from './Components/GardenForm';
 import Plants from './Components/Plants';
 import PlantForm from './Components/PlantForm';
 import EditGardenForm from './Components/EditGardenForm';
-import GardenDetail from './Components/GardenDetail';
 import React, { useState } from "react";
 
 
@@ -49,7 +48,8 @@ function App() {
           <Route path = "/garden_form" element={<GardenForm/>}/>
           <Route path = "/plant_form" element={<PlantForm/>}/> 
           <Route path = "/edit_garden_form" element={<EditGardenForm/>}/>
-          <Route path = "/garden_detail" element={<GardenDetail/>}/>
+          <Route path = "/gardens/:garden_id" element={<GardenDetail />}/>
+        
          {/* <Route path = "/signup" element={<Signup/>}/> */}
 
 

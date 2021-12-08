@@ -1,20 +1,21 @@
 import PlantCard from "./PlantCard"
 import {useEffect, useState} from "react"
-import {Link} from "react-router-dom"
+import {Link, useParams} from "react-router-dom"
 
 
-function GardenDetail({id}){
+
+function GardenDetail(){
     
     const [plantList, setPlants] = useState([])
+    const {garden_id} = useParams()
 
     useEffect(() => {
-        fetch(`/gardens/${id}`)
+        console.log(garden_id);
+        fetch(`/gardens/${garden_id}`)
             .then((r) => r.json())
-            .then((plants) => {
+            .then((garden) => {
                 // console.log(users)
-                setPlants(plants)
-                console.log(plants)
-                
+                setPlants(garden.plants)                
             })
     }, [])
 
@@ -31,7 +32,7 @@ function GardenDetail({id}){
         {console.log(plantList)}
         {plantList.map((plant) => {
             return (
-                <div    >
+                <div  >
                     <PlantCard plant={plant}/>
                 </div>
             )})
