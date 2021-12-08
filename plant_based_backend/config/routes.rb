@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   
+
+    resources :gardens, only: [:index, :show, :create, :destroy]
     resources :users, only: [:index, :show, :create]
     
     post "/signup", to: "users#create"

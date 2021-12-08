@@ -1,13 +1,33 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  /* background-image: url('./images/teemu-paananen-OOE4xAnBhKo-unsplash.jpg') */
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+#plantCardsDiv { 
+ display: grid;
+ grid-template-columns: repeat(3, 1fr);
+ grid-gap: 1rem;
+ grid-auto-rows: minmax(3rem, auto);
+}
+
+#gardenCardsDiv { 
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 0.25rem;
+  grid-auto-rows: minmax(3rem, auto);
+
+}
+
+.btn btn-primary{
+  text-decoration: none;
+ 
+}
+
+.redirect{
+ text-decoration: none;
+ color: black;
+}
+
+.redirect_btn{
+   margin: 10px;
+   
 }
