@@ -25,6 +25,7 @@ const Login= () => {
       },
       body: JSON.stringify(formData),
     }).then((res) => {
+      console.log(res)
       if (res.ok) {
         res.json().then((user) => {
           setCurrentUser(user);
