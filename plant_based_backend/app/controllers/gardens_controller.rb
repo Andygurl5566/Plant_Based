@@ -1,5 +1,5 @@
 class GardensController < ApplicationController
-    # before_action :authorized
+   
 
     def index
         garden = Garden.all 
