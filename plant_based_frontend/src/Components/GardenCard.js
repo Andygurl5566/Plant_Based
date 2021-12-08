@@ -1,8 +1,16 @@
 import { Card } from "react-bootstrap"
+import React, { useState } from "react";
+import EditGardenForm from "./EditGardenForm";
 
 
 function GardenCard({garden, onDeleteGarden}) {
     const { id} = garden;
+    const [currentGarden, setCurrentGarden] = useState({});
+    const [formData, setFormData] = useState({
+        name: "",
+        location: "",
+        user_id:""
+    })
 
 //    Delete functionality
     function handleDeleteGarden() {
@@ -16,6 +24,8 @@ function GardenCard({garden, onDeleteGarden}) {
         });
       }
 
+ // Update Functionality
+
 
     return (
         <>
@@ -28,6 +38,7 @@ function GardenCard({garden, onDeleteGarden}) {
                 >View</button>
                 <button class ="redirect_btn">Edit</button>
                 <button onClick={handleDeleteGarden} class ="redirect_btn">Delete</button>
+                <EditGardenForm garden={garden} id={id}/> // make this conditionally rendered based on whether or not you click the view button
             </Card.Body>
         </Card>
         </>

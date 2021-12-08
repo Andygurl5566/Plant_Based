@@ -10,6 +10,7 @@ import Gardens from './Components/Gardens';
 import GardenForm from './Components/GardenForm';
 import Plants from './Components/Plants';
 import PlantForm from './Components/PlantForm';
+import EditGardenForm from './Components/EditGardenForm';
 
 import React, { useState } from "react";
 
@@ -45,8 +46,9 @@ function App() {
           setCurrentUser={setCurrentUser}
           />}/>
           <Route path = "/garden_form" element={<GardenForm/>}/>
-          <Route path = "/plant_form" element={<PlantForm/>}/>
-          {/* <Route path = "/signup" element={<Signup/>}/> */}
+          <Route path = "/plant_form" element={<PlantForm/>}/> 
+          <Route path = "/edit_garden_form" element={<EditGardenForm/>}/>
+         {/* <Route path = "/signup" element={<Signup/>}/> */}
 
 
 

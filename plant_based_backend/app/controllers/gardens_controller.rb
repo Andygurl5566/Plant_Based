@@ -24,6 +24,18 @@ class GardensController < ApplicationController
         end
     end
 
+
+    def update
+        garden = Garden.find_by(id: params[:id])
+        if garden
+            garden.update(garden_params)
+            render json: garden, status:200
+        else 
+            render json: { error: "Garden not found"}, status: :not_found
+        end
+    end
+
+
     def destroy
         garden = Garden.find_by(id: params[:id])
         if garden 
