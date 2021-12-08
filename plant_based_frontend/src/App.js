@@ -11,7 +11,7 @@ import GardenForm from './Components/GardenForm';
 import Plants from './Components/Plants';
 import PlantForm from './Components/PlantForm';
 import EditGardenForm from './Components/EditGardenForm';
-
+import GardenDetail from './Components/GardenDetail';
 import React, { useState } from "react";
 
 
@@ -30,6 +30,7 @@ function App() {
             <Link class="nav_bar_buttons" to="/"> home </Link>
             <Link class="nav_bar_buttons" to="/gardens"> my gardens </Link>
             <Link class="nav_bar_buttons" to="/plants"> my plants </Link>
+            
 
           </Container>
       </Navbar>
@@ -48,7 +49,9 @@ function App() {
           <Route path = "/garden_form" element={<GardenForm/>}/>
           <Route path = "/plant_form" element={<PlantForm/>}/> 
           <Route path = "/edit_garden_form" element={<EditGardenForm/>}/>
+          <Route path = "/garden_detail" element={<GardenDetail/>}/>
          {/* <Route path = "/signup" element={<Signup/>}/> */}
+
 
 
 

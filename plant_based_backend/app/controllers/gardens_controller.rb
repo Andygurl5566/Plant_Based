@@ -7,9 +7,9 @@ class GardensController < ApplicationController
     end
 
     def show
-        garden = Garden.find_by(id: params[:id])
+        garden = current_user.gardens.find_by(id: params[:id])
         if garden 
-            render json: current_user.garden
+            render json: garden
         else 
             render json: {error: "Garden not found"}, status: :not_found
         end

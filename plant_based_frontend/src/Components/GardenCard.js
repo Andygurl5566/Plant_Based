@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 
 function GardenCard({garden, onDeleteGarden}) {
     const { id} = garden;
-    const [toggle, setToggle] = useState(true);
+    const [toggle, setToggle] = useState(false);
     const [currentGarden, setCurrentGarden] = useState({});
     const [formData, setFormData] = useState({
         name: "",
