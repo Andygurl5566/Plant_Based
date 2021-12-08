@@ -1,7 +1,9 @@
 import { Card } from "react-bootstrap"
 import React, { useState } from "react";
 import EditGardenForm from "./EditGardenForm";
-import {Link} from "react-router-dom"
+import GardenDetail from "./GardenDetail";
+import { Container } from "react-bootstrap";
+import { Link, Route, Routes } from 'react-router-dom'
 
 
 function GardenCard({garden, onDeleteGarden}) {
@@ -39,12 +41,15 @@ function handleToggle(){
 
     return (
         <>
+        
         <Card style={{ width: '18rem' }}>
             <Card.Body>
                 <Card.Img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F24%2F2017%2F07%2Fmcclurg_garden_gravel_path_2481501_mcclu20160414-_41a3348-1.jpg&q=85"/>
                 <Card.Title> {garden.name}</Card.Title>
                 <Card.Subtitle>{garden.location}</Card.Subtitle>
-                <button class= "redirect_btn"> <Link class="redirect" to="/plants"> View </Link></button> 
+
+                <button
+                class= "redirect_btn"> <Link class="redirect" to={`/gardens/${id}`}> View </Link></button> 
 
                 {/* The above link should only show plants for that particular garden */}
 
