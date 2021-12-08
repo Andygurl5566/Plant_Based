@@ -2,6 +2,20 @@ import { Card } from "react-bootstrap"
 
 
 function GardenCard({garden}) {
+
+//    Working on delete
+    // function handleDeleteGarden() {
+    //     fetch(`/garden/${id}`, {
+    //       method: "DELETE",
+    //     }).then((res) => {
+    //         console.log(res)
+    //       if (res.ok) {
+    //         onDeleteGarden(garden);
+    //       }
+    //     });
+    //   }
+
+
     return (
         <>
         <Card style={{ width: '18rem' }}>
@@ -11,7 +25,7 @@ function GardenCard({garden}) {
                 <Card.Subtitle>{garden.location}</Card.Subtitle>
                 <button class ="redirect_btn">View</button>
                 <button class ="redirect_btn">Edit</button>
-                <button class ="redirect_btn">Delete</button>
+                <button  class ="redirect_btn">Delete</button>
             </Card.Body>
         </Card>
         </>
