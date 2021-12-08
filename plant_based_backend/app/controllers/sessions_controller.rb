@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-    byebug
+   
     session.delete :id
     head :no_content
   end

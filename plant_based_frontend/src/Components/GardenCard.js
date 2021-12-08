@@ -1,19 +1,20 @@
 import { Card } from "react-bootstrap"
 
 
-function GardenCard({garden}) {
+function GardenCard({garden, onDeleteGarden}) {
+    const { id} = garden;
 
-//    Working on delete
-    // function handleDeleteGarden() {
-    //     fetch(`/garden/${id}`, {
-    //       method: "DELETE",
-    //     }).then((res) => {
-    //         console.log(res)
-    //       if (res.ok) {
-    //         onDeleteGarden(garden);
-    //       }
-    //     });
-    //   }
+//    Delete functionality
+    function handleDeleteGarden() {
+        fetch(`/gardens/${id}`, {
+          method: "DELETE",
+        }).then((res) => {
+            console.log(res)
+          if (res.ok) {
+            onDeleteGarden(garden);
+          }
+        });
+      }
 
 
     return (
@@ -26,7 +27,7 @@ function GardenCard({garden}) {
                 <button class ="redirect_btn"
                 >View</button>
                 <button class ="redirect_btn">Edit</button>
-                <button  class ="redirect_btn">Delete</button>
+                <button onClick={handleDeleteGarden} class ="redirect_btn">Delete</button>
             </Card.Body>
         </Card>
         </>

@@ -15,6 +15,12 @@ function Gardens () {
             })
     }, [])
 
+    function handleDeleteGarden(deletedGarden) {
+        setGardens((gardens) =>
+          gardens.filter((garden) => garden.id !== deletedGarden.id)
+        );
+      }
+
 
 
     return ( 
@@ -28,6 +34,7 @@ function Gardens () {
                 <div id="GardenCardsDiv">
                     <GardenCard 
                     garden={garden}
+                    onDeleteGarden={handleDeleteGarden}
                     />
                 </div>
             )})
