@@ -24,9 +24,9 @@ function Home ({setCurrentUser}) {
         <h1>HOME</h1>
         <p>welcome to plant based , the premiere garden management app</p>
 
-        <button > <Link class="redirect" to="/login"> Login </Link></button>
-        <button > <Link class="redirect" to="/signup"> Signup </Link></button>
-        <button onClick={handleLogout}> <Link class="redirect" to="/logout"> Logout </Link></button>
+        <button id="login_btn" > <Link class="redirect" to="/login"> Login </Link></button>
+        <button id="signup_btn"> <Link class="redirect" to="/signup"> Signup </Link></button>
+        <button id="logout_btn" onClick={handleLogout}> <Link class="redirect" to="/logout"> Logout </Link></button>
         
         </>
 
