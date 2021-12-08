@@ -8,6 +8,9 @@ import Home from './Components/Home';
 import Login from './Components/Login';
 import Gardens from './Components/Gardens';
 import GardenForm from './Components/GardenForm';
+import Plants from './Components/Plants';
+import PlantForm from './Components/PlantForm';
+
 import React, { useState } from "react";
 
 
@@ -37,12 +40,12 @@ function App() {
           setCurrentUser={setCurrentUser}
           />}/>
           <Route path="/gardens" element={<Gardens/>}/>
-          {/* <Route path="/plants" element={<Plants/>}/> */}
+          <Route path="/plants" element={<Plants/>}/>
           <Route path="/login" element={<Login 
           setCurrentUser={setCurrentUser}
           />}/>
           <Route path = "/garden_form" element={<GardenForm/>}/>
-          {/* <Route path = "/plant_form" element={<PlantForm/>}/> */}
+          <Route path = "/plant_form" element={<PlantForm/>}/>
           {/* <Route path = "/signup" element={<Signup/>}/> */}
 
 
