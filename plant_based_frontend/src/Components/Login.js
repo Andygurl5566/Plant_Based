@@ -56,6 +56,7 @@ const Login= ({setCurrentUser}) => {
       
       </div>
       <button class="btn btn-primary" type="submit"><Link class="redirect2"to="/gardens">Submit</Link></button>
+      {/* Need to find different way to redirect login */}
       <Link class="btn btn-primary" to="/"> Back</Link> 
     </form>
 </>
