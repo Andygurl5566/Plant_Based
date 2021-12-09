@@ -2,7 +2,7 @@ class PlantsController < ApplicationController
 
     def index
         plants = current_user.plants
-        render json: plants
+        render json: plants.order(created_at: :desc)
     end
 
     def show
