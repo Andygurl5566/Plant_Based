@@ -28,6 +28,12 @@ function handleToggle(){
 }
 
 //    Delete functionality
+function confirmDelete(){
+  let result = window.confirm("delete this plant?")
+  if (result) {
+      handleDeletePlants()
+  }
+}
 function handleDeletePlants() {
     fetch(`/plants/${id}`, {
       method: "DELETE",
@@ -51,7 +57,7 @@ function handleDeletePlants() {
                 <button
                 class= "redirect_btn"> <Link class="redirect" to={`/plants/${id}`}> View </Link></button> 
                 <button onClick={handleToggle}class ="redirect_btn">{toggle==false? "Edit":"Close"}</button>
-                <button onClick={handleDeletePlants} class ="redirect_btn">Delete</button>
+                <button onClick={confirmDelete} class ="redirect_btn">Delete</button>
                 {toggle == false? "" : <EditPlantForm plant={plant} id={id}/> }
                {/* <button> {toggle==false? "Edit":"Close"}</button> */}
 
