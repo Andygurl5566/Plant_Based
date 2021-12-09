@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
+
 const Login= ({setCurrentUser}) => {
   
   const [formData, setFormData] = useState({
@@ -56,7 +57,7 @@ const Login= ({setCurrentUser}) => {
       <div class="form-check">
       
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button class="redirect_btn" type="submit"><Link class="redirect"to="/gardens">Submit</Link></button>
       <Link class="btn btn-primary" to="/"> Back</Link> 
     </form>
 </>

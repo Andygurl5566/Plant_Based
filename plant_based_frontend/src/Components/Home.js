@@ -26,7 +26,7 @@ function Home ({setCurrentUser}) {
 
         <button id="login_btn" > <Link class="redirect" to="/login"> Login </Link></button>
         <button id="signup_btn"> <Link class="redirect" to="/signup"> Signup </Link></button>
-        <button id="logout_btn" onClick={handleLogout}> <Link class="redirect" to="/logout"> Logout </Link></button>
+        <button id="logout_btn" onClick={handleLogout}> <Link class="redirect" to="/login"> Logout </Link></button>
         
         </>
 
