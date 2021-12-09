@@ -7,13 +7,14 @@ import { Link, Route, Routes } from 'react-router-dom'
 
 
 function GardenCard({garden, onDeleteGarden}) {
+    console.log(garden)
     const { id} = garden;
     const [toggle, setToggle] = useState(false);
     const [currentGarden, setCurrentGarden] = useState({});
     const [formData, setFormData] = useState({
         name: "",
         location: "",
-        user_id:""
+        user_id: `${garden.user_id}`
     })
 
 //toggle functionality
@@ -46,7 +47,7 @@ function handleToggle(){
 
  // Update Functionality
 
-
+console.log(garden)
     return (
         <>
         

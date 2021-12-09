@@ -12,7 +12,7 @@ const EditPlantForm=({plant, id})=>{
         image: "",
         care_instructions: "",
         notes: "",
-        garden_id: ""
+        garden_id: `${plant.garden_id}`
 
     });
     const handleChange = (e) => {
@@ -79,10 +79,10 @@ const EditPlantForm=({plant, id})=>{
         <input type="text" name = "notes" class="form-control" value={formData.notes} onChange={handleChange} id="notes" placeholder="Notes"/>
     </div>
 
-    <div class="form-group">
+    {/* <div class="form-group">
         <label for="name">Garden ID</label>
         <input type="text" name = "garden_id" class="form-control" value={formData.garden_id} onChange={handleChange} id="notes" placeholder="Enter an Integer"/>
-    </div>
+    </div> */}
 
     <Form.Group controlId="formFile" className="mb-3">     
     <div class="form-group">

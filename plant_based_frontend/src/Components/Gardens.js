@@ -12,8 +12,10 @@ function Gardens() {
             .then((gardens) => {
                 // console.log(Gardens)
                 setGardens(gardens)
+                console.log(gardens)
             })
-    }, [GardenList])
+    }, [])
+    //currently took out because it was causeing my terminal to keep flickering
     // GardenList inside the empty array at the end of useEffect makes the useEffect listen to any changes in GardenList. Whenever GardenList changes, useEffect runs again and rerenders the gardens.
 
     function handleDeleteGarden(deletedGarden) {
@@ -22,7 +24,7 @@ function Gardens() {
         );
       }
 
-
+      
 
     return ( 
         <>

@@ -8,7 +8,7 @@ const EditGardenForm=({garden, id})=>{
     const [formData, setFormData] = useState({
         name: "",
         location: "",
-        user_id:""
+        user_id: `${garden.user_id}`
 
     });
     const handleChange = (e) => {
@@ -66,10 +66,10 @@ const EditGardenForm=({garden, id})=>{
         <input type="text" name="location" value={formData.location} onChange={handleChange} class="form-control" id="location" placeholder={garden.location} />
     </div>
 
-    <div class="form-group">
+    {/* <div class="form-group">
         <label for="plant_type">User id (temporary)</label>
         <input type="text" name="user_id" value={formData.user_id} onChange={handleChange} class="form-control" id="temp" placeholder={garden.user_id}/>
-    </div>
+    </div> */}
 
 
 

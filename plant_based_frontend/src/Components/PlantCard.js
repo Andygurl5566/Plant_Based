@@ -6,6 +6,7 @@ import { Link } from "react-router-dom";
 
 function PlantCard({plant, onDeletePlants}) {
     const {id} = plant
+    console.log(plant)
     const [toggle, setToggle] = useState(false);
     const [currentPlant, setCurrentPlant] = useState({});
     const [formData, setFormData] = useState({
@@ -16,7 +17,7 @@ function PlantCard({plant, onDeletePlants}) {
         image: "image",
         care_instructions: "care_instructions",
         notes: "notes",
-        garden_id: "garden_id"
+        garden_id: `${plant.garden_id}`
     })
 
 //toggle functionality
