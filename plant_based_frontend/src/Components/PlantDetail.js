@@ -1,4 +1,4 @@
-
+import { Card } from "react-bootstrap"
 
 function PlantDetail({plant}) {
     return (

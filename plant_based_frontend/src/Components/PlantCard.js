@@ -1,6 +1,8 @@
 import { Card } from "react-bootstrap"
 import React, { useState } from "react";
 import EditPlantForm from "./EditPlantForm";
+import PlantDetail from "./PlantDetail"
+import { Link } from "react-router-dom";
 
 function PlantCard({plant, onDeletePlants}) {
     const {id} = plant
@@ -46,6 +48,8 @@ function handleDeletePlants() {
                 <Card.Title> {plant.name}</Card.Title>
                 <Card.Subtitle>{plant.plant_type}</Card.Subtitle>
                 <Card.Text>{plant.notes}</Card.Text>
+                <button
+                class= "redirect_btn"> <Link class="redirect" to={`/gardens/${id}`}> View </Link></button> 
                 <button onClick={handleToggle}class ="redirect_btn">{toggle==false? "Edit":"Close"}</button>
                 <button onClick={handleDeletePlants} class ="redirect_btn">Delete</button>
                 {toggle == false? "" : <EditPlantForm plant={plant} id={id}/> }
