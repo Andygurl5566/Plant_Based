@@ -25,6 +25,14 @@ function handleToggle(){
 }
 
 //    Delete functionality
+
+    function confirmDelete(){
+        let result = window.confirm("delete this garden?")
+        if (result) {
+            handleDeleteGarden()
+        }
+    }
+
     function handleDeleteGarden() {
         fetch(`/gardens/${id}`, {
           method: "DELETE",
@@ -54,7 +62,7 @@ function handleToggle(){
                 {/* The above link should only show plants for that particular garden */}
 
                 <button onClick={handleToggle} class ="redirect_btn"> {toggle==false? "Edit":"Close"} </button>
-                <button onClick={handleDeleteGarden} class ="redirect_btn">Delete</button>
+                <button onClick={confirmDelete} class ="redirect_btn">Delete</button>
                 {toggle == false? "" : <EditGardenForm garden={garden} id={id}/> }
                 {/* // above link should be conditionally rendered based on whether or not you click the view button */}
                 

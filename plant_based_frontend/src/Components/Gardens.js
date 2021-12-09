@@ -13,7 +13,8 @@ function Gardens() {
                 // console.log(Gardens)
                 setGardens(gardens)
             })
-    }, [])
+    }, [GardenList])
+    // GardenList inside the empty array at the end of useEffect makes the useEffect listen to any changes in GardenList. Whenever GardenList changes, useEffect runs again and rerenders the gardens.
 
     function handleDeleteGarden(deletedGarden) {
         setGardens((gardens) =>
