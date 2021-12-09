@@ -77,7 +77,7 @@ const EditGardenForm=({garden, id})=>{
     
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
-   <Link class="btn btn-primary" to="/gardens"> Close</Link>
+   
    
 
  </form>   

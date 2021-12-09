@@ -101,7 +101,7 @@ const EditPlantForm=({plant, id})=>{
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-    <Link class="btn btn-primary" to="/plants"> Back</Link> 
+    {/* <Link class="btn btn-primary" to="/plants"> Close</Link>  */}
     
  </form>   
         

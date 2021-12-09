@@ -46,9 +46,10 @@ function handleDeletePlants() {
                 <Card.Title> {plant.name}</Card.Title>
                 <Card.Subtitle>{plant.plant_type}</Card.Subtitle>
                 <Card.Text>{plant.notes}</Card.Text>
-                <button onClick={handleToggle}class ="redirect_btn">Edit</button>
+                <button onClick={handleToggle}class ="redirect_btn">{toggle==false? "Edit":"Close"}</button>
                 <button onClick={handleDeletePlants} class ="redirect_btn">Delete</button>
                 {toggle == false? "" : <EditPlantForm plant={plant} id={id}/> }
+               {/* <button> {toggle==false? "Edit":"Close"}</button> */}
 
             </Card.Body>
         {console.log(plant)}

@@ -40,7 +40,7 @@ function App() {
           <Route path="/" element={<Home 
           setCurrentUser={setCurrentUser}
           />}/>
-          <Route path="/gardens" element={<Gardens/>}/>
+          <Route path="/gardens" element={<Gardens />}/>
           <Route path="/plants" element={<Plants/>}/>
           <Route path="/login" element={<Login 
           setCurrentUser={setCurrentUser}

@@ -24,8 +24,13 @@ body {
 
 .redirect{
  text-decoration: none;
- color: black;
+ color: rgb(0, 0, 0);
 }
+
+.redirect2{
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+ }
 
 .redirect_btn{
    margin: 10px;

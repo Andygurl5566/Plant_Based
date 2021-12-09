@@ -18,7 +18,6 @@ const Login= ({setCurrentUser}) => {
   const handleSubmit = (event) => {
     event.preventDefault();
     fetch("/login", {
-      //fix above
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -34,7 +33,6 @@ const Login= ({setCurrentUser}) => {
         });
       } else {
         res.json().then((errors) => {
-          //fix above
           console.error(errors);
         });
       }
@@ -57,7 +55,7 @@ const Login= ({setCurrentUser}) => {
       <div class="form-check">
       
       </div>
-      <button class="redirect_btn" type="submit"><Link class="redirect"to="/gardens">Submit</Link></button>
+      <button class="btn btn-primary" type="submit"><Link class="redirect2"to="/gardens">Submit</Link></button>
       <Link class="btn btn-primary" to="/"> Back</Link> 
     </form>
 </>
