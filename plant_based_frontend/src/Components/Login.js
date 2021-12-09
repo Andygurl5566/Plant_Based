@@ -29,7 +29,7 @@ const Login= ({setCurrentUser}) => {
         res.json().then((user) => {
          
           setCurrentUser(user); 
-          console.log(user.id)
+          console.log(user.name)
         });
       } else {
         res.json().then((errors) => {

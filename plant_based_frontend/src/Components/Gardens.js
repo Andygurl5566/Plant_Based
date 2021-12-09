@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import GardenCard from "./GardenCard"
 
 function Gardens() {
-
+    
     const [GardenList, setGardens] = useState([])
 
     useEffect(() => {

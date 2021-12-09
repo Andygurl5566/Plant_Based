@@ -18,15 +18,15 @@ import React, { useState } from "react";
 
 
 function App() {
-
   const [currentUser, setCurrentUser] = useState({});
+  console.log(currentUser);
 
 
 
   return (
     <div id="body">
-      <Navbar>
-          <Container id="nav_bar">
+      <Navbar id="nav_bar">
+          <Container id="navContent" >
             <h1> plant-based 🌱 </h1> 
             <Link class="nav_bar_buttons" to="/"> home </Link>
             <Link class="nav_bar_buttons" to="/gardens"> my gardens </Link>
@@ -42,12 +42,12 @@ function App() {
           <Route path="/" element={<Home 
           setCurrentUser={setCurrentUser}
           />}/>
-          <Route path="/gardens" element={<Gardens />}/>
+          <Route path="/gardens" element={<Gardens currentUser={currentUser} />}/>
           <Route path="/plants" element={<Plants/>}/>
           <Route path="/login" element={<Login 
           setCurrentUser={setCurrentUser}
           />}/>
-          <Route path = "/garden_form" element={<GardenForm/>}/>
+          <Route path = "/garden_form" element={<GardenForm currentUser={currentUser}/>}/>
           <Route path = "/plant_form" element={<PlantForm/>}/> 
           <Route path = "/edit_garden_form" element={<EditGardenForm/>}/>
           <Route path = "/gardens/:garden_id" element={<GardenDetail />}/>
