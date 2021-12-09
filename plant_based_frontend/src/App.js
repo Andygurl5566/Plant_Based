@@ -12,6 +12,7 @@ import GardenForm from './Components/GardenForm';
 import Plants from './Components/Plants';
 import PlantForm from './Components/PlantForm';
 import EditGardenForm from './Components/EditGardenForm';
+import Signup from './Components/Signup';
 import React, { useState } from "react";
 
 
@@ -52,7 +53,7 @@ function App() {
           <Route path = "/gardens/:garden_id" element={<GardenDetail />}/>
           <Route path = "/plants/:plant_id" element={<PlantDetail />}/>
         
-         {/* <Route path = "/signup" element={<Signup/>}/> */}
+         <Route path = "/signup" element={<Signup/>}/>
 
 
 
