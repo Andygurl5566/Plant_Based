@@ -3,7 +3,7 @@ import {Link} from "react-router-dom"
 import GardenCard from "./GardenCard"
 
 function Gardens() {
-    
+    const [edited, setEdited] = useState(true)
     const [GardenList, setGardens] = useState([])
 
     useEffect(() => {
@@ -14,7 +14,7 @@ function Gardens() {
                 setGardens(gardens)
                 console.log(gardens)
             })
-    }, [])
+    }, [edited])
     //currently took out because it was causeing my terminal to keep flickering
     // GardenList inside the empty array at the end of useEffect makes the useEffect listen to any changes in GardenList. Whenever GardenList changes, useEffect runs again and rerenders the gardens.
 
@@ -36,7 +36,8 @@ function Gardens() {
             return (
                 <div id="GardenCardsDiv">
                     <GardenCard 
-                    garden={garden}
+                    setEdited={setEdited} edited={edited}
+                    garden={garden} 
                     onDeleteGarden={handleDeleteGarden}
                     />
                 </div>

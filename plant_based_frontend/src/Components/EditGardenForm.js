@@ -2,7 +2,7 @@ import { Form } from "react-bootstrap"
 import {Link} from 'react-router-dom'
 import React, { useState } from "react";
 
-const EditGardenForm=({garden, id})=>{
+const EditGardenForm=({garden, id, setEdited, edited})=>{
 
     const [currentGarden, setCurrentGarden] = useState({});
     const [formData, setFormData] = useState({
@@ -16,7 +16,7 @@ const EditGardenForm=({garden, id})=>{
           ...formData,
           [e.target.name]: e.target.value,
         });
-      };
+    };
       const handleSubmit = (event) => {
         event.preventDefault();
         fetch(`/gardens/${id}`, {
@@ -32,7 +32,8 @@ const EditGardenForm=({garden, id})=>{
                 res.json().then((garden) => {
                   // event.target.reset() 
                   // doesnt work, not sure why
-                  setCurrentGarden(garden);
+                  setCurrentGarden(garden)
+                  setEdited(!edited)
                 })
                 // .then(json =>{
                 //     getUpdatedGarden()

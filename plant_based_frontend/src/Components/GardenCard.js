@@ -6,7 +6,7 @@ import { Container } from "react-bootstrap";
 import { Link, Route, Routes } from 'react-router-dom'
 
 
-function GardenCard({garden, onDeleteGarden}) {
+function GardenCard({garden, onDeleteGarden, setEdited, edited}) {
     console.log(garden)
     const { id} = garden;
     const [toggle, setToggle] = useState(false);
@@ -67,7 +67,7 @@ console.log(garden)
 
                 <button onClick={handleToggle} class ="redirect_btn"> {toggle==false? "Edit":"Close"} </button>
                 <button onClick={confirmDelete} class ="redirect_btn">Delete</button>
-                {toggle == false? "" : <EditGardenForm garden={garden} id={id}/> }
+                {toggle == false? "" : <EditGardenForm garden={garden} edited={edited} setEdited={setEdited} id={id}/> }
                 {/* // above link should be conditionally rendered based on whether or not you click the view button */}
                 
             </Card.Body>
