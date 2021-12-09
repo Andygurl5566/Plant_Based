@@ -6,11 +6,11 @@ class PlantsController < ApplicationController
     end
 
     def show
-        plant = Plant.find_by(id: params[:id])
+        plant = current_user.plants.find_by(id: params[:id])
         if plant 
-            render json: current_user.plant
+            render json: plant
         else 
-            render json: {error: "plant not found"}, status: :not_found
+            render json: {error: "Plant not found"}, status: :not_found
         end
     end
 

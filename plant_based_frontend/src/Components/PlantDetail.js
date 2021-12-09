@@ -1,6 +1,23 @@
 import { Card } from "react-bootstrap"
+import {useEffect, useState} from "react"
+import {useParams} from "react-router-dom"
 
-function PlantDetail({plant}) {
+function PlantDetail() {
+
+    const [plant, setPlant] = useState([])
+    const {plant_id} = useParams()
+
+    useEffect(() => {
+        console.log(plant_id);
+        fetch(`/plants/${plant_id}`)
+            .then((r) => r.json())
+            .then((plant) => {
+                // console.log(users)
+                setPlant(plant)                
+            })
+    }, [])
+
+
     return (
         <Card style={{ width: '40rem' }}>
             <Card.Body>

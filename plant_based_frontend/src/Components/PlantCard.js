@@ -49,7 +49,7 @@ function handleDeletePlants() {
                 <Card.Subtitle>{plant.plant_type}</Card.Subtitle>
                 <Card.Text>{plant.notes}</Card.Text>
                 <button
-                class= "redirect_btn"> <Link class="redirect" to={`/gardens/${id}`}> View </Link></button> 
+                class= "redirect_btn"> <Link class="redirect" to={`/plants/${id}`}> View </Link></button> 
                 <button onClick={handleToggle}class ="redirect_btn">{toggle==false? "Edit":"Close"}</button>
                 <button onClick={handleDeletePlants} class ="redirect_btn">Delete</button>
                 {toggle == false? "" : <EditPlantForm plant={plant} id={id}/> }

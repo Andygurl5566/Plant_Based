@@ -2,6 +2,7 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import GardenDetail from "./Components/GardenDetail";
+import PlantDetail from './Components/PlantDetail';
 import { Outlet, Link, Route, Routes } from 'react-router-dom'
 import { Navbar, Container } from 'react-bootstrap';
 import Home from './Components/Home';
@@ -49,6 +50,7 @@ function App() {
           <Route path = "/plant_form" element={<PlantForm/>}/> 
           <Route path = "/edit_garden_form" element={<EditGardenForm/>}/>
           <Route path = "/gardens/:garden_id" element={<GardenDetail />}/>
+          <Route path = "/plants/:plant_id" element={<PlantDetail />}/>
         
          {/* <Route path = "/signup" element={<Signup/>}/> */}
 
