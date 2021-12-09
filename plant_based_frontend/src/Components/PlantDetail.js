@@ -1,6 +1,7 @@
 import { Card } from "react-bootstrap"
 import {useEffect, useState} from "react"
 import {useParams} from "react-router-dom"
+import {Link} from 'react-router-dom'
 
 function PlantDetail() {
 
@@ -27,6 +28,9 @@ function PlantDetail() {
                 <Card.Subtitle>{plant.species}</Card.Subtitle>
                 <Card.Text>Care insructions: {plant.care_instructions}</Card.Text>
                 <Card.Text>Notes: {plant.notes}</Card.Text>
+                <button
+                class= "redirect_btn"> <Link class="redirect" to={`/gardens/${plant.garden_id}`}> Close </Link></button> 
+
             </Card.Body>
         </Card>
     )
