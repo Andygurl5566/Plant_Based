@@ -47,6 +47,7 @@ const Signup= () => {
 
     return ( 
 <>
+<h1> Signup</h1>
     <form onSubmit={handleSubmit}>
       <div class="form-group">
         <label for="exampleInputEmail1">Username</label>

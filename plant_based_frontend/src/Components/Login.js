@@ -42,6 +42,7 @@ const Login= ({setCurrentUser}) => {
 
     return ( 
 <>
+    <h1>Login</h1>  
     <form onSubmit={handleSubmit}>
       <div class="form-group">
         <label for="exampleInputEmail1">Username</label>
