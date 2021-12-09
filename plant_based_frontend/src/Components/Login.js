@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const Login= ({setCurrentUser}) => {
+
+  let navigate = useNavigate()
   
   const [formData, setFormData] = useState({
     username: "",
@@ -27,10 +30,13 @@ const Login= ({setCurrentUser}) => {
       console.log(res)
       if (res.ok) {
         res.json().then((user) => {
-         
+          // event.target.reset()
+          //thought this would reset the form but it doesn't seem to
           setCurrentUser(user); 
           console.log(user.name)
-        });
+
+        })
+        .then(() => navigate("/gardens"))
       } else {
         res.json().then((errors) => {
           console.error(errors);
@@ -56,8 +62,8 @@ const Login= ({setCurrentUser}) => {
       <div class="form-check">
       
       </div>
-      <button class="btn btn-primary" type="submit"><Link class="redirect2"to="/gardens">Submit</Link></button>
-      {/* Need to find different way to redirect login */}
+      <button class="btn btn-primary" type="submit"><Link to="/gardens" class="redirect2">Submit</Link></button> 
+      {/* /* Need to find different way to redirect login */}
       <Link class="btn btn-primary" to="/"> Back</Link> 
     </form>
 </>

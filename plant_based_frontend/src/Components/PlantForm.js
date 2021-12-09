@@ -1,9 +1,10 @@
 import { Form } from "react-bootstrap"
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import React, { useState } from "react";
 
 
 const PlantForm=()=> {
+    let navigate = useNavigate()
     const [currentPlant, setCurrentPlant] = useState({});
     const [formData, setFormData] = useState({
         name: "",
@@ -34,7 +35,8 @@ const PlantForm=()=> {
             if (res.ok) {
               res.json().then((plant) => {
                 setCurrentPlant(plant);
-              });
+              })
+              .then(() => navigate("/plants"))
             } else {
               res.json().then((errors) => {
                 console.error(errors);

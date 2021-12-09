@@ -1,8 +1,9 @@
 import { Form } from "react-bootstrap"
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import React, { useState } from "react";
 
 const GardenForm=({currentUser})=>{
+    let navigate = useNavigate()
     console.log(currentUser)
     const [currentGarden, setCurrentGarden] = useState({});
     const [formData, setFormData] = useState({
@@ -30,7 +31,8 @@ const GardenForm=({currentUser})=>{
             if (res.ok) {
               res.json().then((garden) => {
                 setCurrentGarden(garden);
-              });
+              })
+              .then(() => navigate("/gardens"))
             } else {
               res.json().then((errors) => {
                 console.error(errors);

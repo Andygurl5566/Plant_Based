@@ -30,6 +30,8 @@ const EditGardenForm=({garden, id})=>{
               console.log(res)
               if (res.ok) {
                 res.json().then((garden) => {
+                  // event.target.reset() 
+                  // doesnt work, not sure why
                   setCurrentGarden(garden);
                 })
                 // .then(json =>{

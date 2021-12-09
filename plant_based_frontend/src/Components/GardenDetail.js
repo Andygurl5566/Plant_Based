@@ -2,8 +2,6 @@ import PlantCard from "./PlantCard"
 import {useEffect, useState} from "react"
 import {Link, useParams} from "react-router-dom"
 
-
-
 function GardenDetail(){
     
     const [plantList, setPlants] = useState([])
@@ -19,12 +17,9 @@ function GardenDetail(){
             })
     }, [])
 
-
     return(
-        
         <> 
         <h1>your plants</h1>
-
         <button class= "redirect_btn"> <Link class="redirect" to="/plant_form"> Add Plant </Link></button>
         <button class= "redirect_btn"> <Link class="redirect" to="/gardens"> Back </Link></button>
 
@@ -37,11 +32,9 @@ function GardenDetail(){
                 </div>
             )})
             }
-        
         </div>
         </>
 
-        
     )
 }
 

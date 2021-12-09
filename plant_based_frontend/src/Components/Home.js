@@ -25,7 +25,7 @@ function Home ({setCurrentUser}) {
         <h1>HOME</h1>
         <p>welcome to plant based , the premiere garden management app</p>
         </div>
-        <img id="homepageImg" src="https://media.istockphoto.com/vectors/gardening-tools-and-plants-in-the-garden-vector-id1268196717?k=20&m=1268196717&s=612x612&w=0&h=RBA2SisPRx6OIeouAQ2R7I78eiazDS2gvGPr17mHvy4=" />
+        <img id="homepageImg" src="https://media2.giphy.com/media/3oEjHOUcNRKgpqTHiM/giphy.gif" />
         <div id="login-buttons-div">
           <button id="login_btn" > <Link class="redirect" to="/login"> Login </Link></button>
           <button id="signup_btn"> <Link class="redirect" to="/signup"> Signup </Link></button>

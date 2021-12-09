@@ -58,7 +58,10 @@ console.log(garden)
                 <Card.Subtitle>{garden.location}</Card.Subtitle>
 
                 <button
-                class= "redirect_btn"> <Link class="redirect" to={`/gardens/${id}`}> View </Link></button> 
+                class= "redirect_btn"> 
+                <Link class="redirect" 
+                to={`/gardens/${id}`}> View </Link>
+                </button> 
 
                 {/* The above link should only show plants for that particular garden */}
 
