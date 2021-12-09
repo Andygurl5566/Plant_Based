@@ -82,7 +82,7 @@ const PlantForm=()=> {
     <Form.Group controlId="formFile" className="mb-3">     
     <div class="form-group">
         <label for="name">Image </label>
-        <input type="file" name="image" value={formData.image} onChange={handleChange} class="form-control" id="image" />
+        <input type="text" name="image" value={formData.image} onChange={handleChange} class="form-control" id="image" />
     </div>
     </Form.Group>
     

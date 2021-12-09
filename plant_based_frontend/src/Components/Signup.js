@@ -10,7 +10,7 @@ const Signup= () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
-    email: "",
+    
   });
 
   const handleChange = (e) => {
@@ -58,10 +58,10 @@ const Signup= () => {
         <input type="text" name="password" value={formData.password} onChange={handleChange} class="form-control" id="exampleInputPassword1" placeholder="Password"/>
       </div>
 
-      <div class="form-group">
+      {/* <div class="form-group">
         <label for="exampleInputPassword1">Email</label>
         <input type="text" name="email" value={formData.email} onChange={handleChange} class="form-control" id="exampleInputPassword1" placeholder="Password"/>
-      </div>
+      </div> */}
       <div class="form-check">
       
       </div>
