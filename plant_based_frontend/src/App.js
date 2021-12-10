@@ -25,14 +25,7 @@ function App() {
 
   console.log(currentUser);
 
-  useEffect(() => {
-    fetch('/me')
-        .then((r) => r.json())
-        .then((user) => {
-          // console.log(user.name)
-          setCurrentUser(user)
-        })
-  }, [])
+
 
 
   useEffect(() => {
@@ -47,7 +40,14 @@ function App() {
 //currently took out because it was causeing my terminal to keep flickering
 // GardenList inside the empty array at the end of useEffect makes the useEffect listen to any changes in GardenList. Whenever GardenList changes, useEffect runs again and rerenders the gardens.
 
-
+useEffect(() => {
+  fetch('/me')
+      .then((r) => r.json())
+      .then((user) => {
+        // console.log(user.name)
+        setCurrentUser(user)
+      })
+}, [])
 
 
 
@@ -68,7 +68,7 @@ function App() {
       <Container>
         <Routes>
           <Route path="/" element={<Home 
-          setCurrentUser={setCurrentUser}
+          
           />}/>
           <Route path="/gardens" element={<Gardens currentUser={currentUser} 
           edited={edited} setEdited={setEdited} GardenList={GardenList} setGardens={setGardens}/>}/>
