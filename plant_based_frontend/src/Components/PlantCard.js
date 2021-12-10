@@ -4,7 +4,7 @@ import EditPlantForm from "./EditPlantForm";
 import PlantDetail from "./PlantDetail"
 import { Link } from "react-router-dom";
 
-function PlantCard({plant, onDeletePlants}) {
+function PlantCard({plant, onDeletePlants, edited, setEdited}) {
     const {id} = plant
     console.log(plant)
     const [toggle, setToggle] = useState(false);
@@ -59,7 +59,11 @@ function handleDeletePlants() {
                 class= "redirect_btn"> <Link class="redirect" to={`/plants/${id}`}> View </Link></button> 
                 <button onClick={handleToggle}class ="redirect_btn">{toggle==false? "Edit":"Close"}</button>
                 <button onClick={confirmDelete} class ="redirect_btn">Delete</button>
-                {toggle == false? "" : <EditPlantForm plant={plant} id={id}/> }
+                {toggle == false? "" : <EditPlantForm 
+                edited={edited}
+                setEdited={setEdited}
+                plant={plant} 
+                id={id}/> }
                {/* <button> {toggle==false? "Edit":"Close"}</button> */}
 
             </Card.Body>

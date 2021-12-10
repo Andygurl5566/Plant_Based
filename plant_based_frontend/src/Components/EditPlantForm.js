@@ -2,7 +2,7 @@ import { Form } from "react-bootstrap"
 import {Link} from 'react-router-dom'
 import React, { useState } from "react";
 
-const EditPlantForm=({plant, id})=>{
+const EditPlantForm=({plant, id, edited, setEdited})=>{
 
     const [currentPlant, setCurrentPlant] = useState({});
     const [formData, setFormData] = useState({
@@ -34,7 +34,8 @@ const EditPlantForm=({plant, id})=>{
               console.log(res)
               if (res.ok) {
                 res.json().then((plant) => {
-                  setCurrentPlant(plant);
+                  setCurrentPlant(plant)
+                  setEdited(!edited)
                 })
                
                 
