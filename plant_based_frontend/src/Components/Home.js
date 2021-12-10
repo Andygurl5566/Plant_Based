@@ -22,14 +22,25 @@ function Home ({setCurrentUser}) {
     return (
         <>
         <div id="home-header">
-        <h1>HOME</h1>
-        <p>welcome to plant based , the premiere garden management app</p>
+        {/* <h1>HOME</h1> */}
+        
+        {/* <p>Welcome to plant based , the premiere garden management app</p> */}
         </div>
-        <img id="homepageImg" src="https://media2.giphy.com/media/3oEjHOUcNRKgpqTHiM/giphy.gif" />
+        
+        <img id="homepageImg" src="https://i.imgur.com/G24UGkO.png" />
+        {/*James pick  <img id="homepageImg" src="https://media2.giphy.com/media/3oEjHOUcNRKgpqTHiM/giphy.gif" /> */}
+
         <div id="login-buttons-div">
+
+        {/* <h5 class="home_tagline">Welcome to plant based , the premiere garden management app</h5> */}
           <button id="login_btn" > <Link class="redirect" to="/login"> Login </Link></button>
           <button id="signup_btn"> <Link class="redirect" to="/signup"> Signup </Link></button>
           <button id="logout_btn" onClick={handleLogout}> <Link class="redirect" to="/login"> Logout </Link></button>
+
+          
+          
+
+        
         </div>
         </>
 

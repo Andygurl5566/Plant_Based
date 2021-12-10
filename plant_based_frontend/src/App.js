@@ -55,7 +55,7 @@ useEffect(() => {
     <div id="body">
       <Navbar id="nav_bar">
           <Container id="navContent" >
-            <Link class="nav_bar_buttons" to="/welcome">hello, {`${currentUser.name}`}!</Link>
+            <Link class="nav_bar_buttons" to="/welcome">Hello, {`${currentUser.name}`}!</Link>
             <h1> plant-based 🌱 </h1> 
             <Link class="nav_bar_buttons" to="/"> home </Link>
             <Link class="nav_bar_buttons" to="/gardens"> my gardens </Link>

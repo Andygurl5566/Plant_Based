@@ -70,7 +70,7 @@ body{
 #login_btn{
   transition-duration: 300ms;
   text-decoration: none;
-  background-color: rgb(212, 255, 212);
+  background-color: rgb(rgb(226, 236, 234));
   padding: .25rem;
   margin: .5rem;
   border-radius: .5rem;
@@ -80,15 +80,16 @@ body{
   text-decoration: none;
   transform: scale(1.1);
   color: rgb(0, 191, 0);
-  background-color: rgb(163, 255, 163);
+  background-color: rgb(78, 134, 78);
 }
 #signup_btn{
   transition-duration: 300ms;
   text-decoration: none;
-  background-color: rgb(215, 220, 255);
+  background-color: rgb(226, 236, 234);
   padding: .25rem;
   margin: .5rem;
   border-radius: .5rem;
+  color: white
  
 }
 
@@ -96,13 +97,13 @@ body{
   text-decoration: none;
   transform: scale(1.1);
   color: rgb(0, 191, 0);
-  background-color: rgb(155, 165, 255);
+  background-color: rgb(78, 134, 78);
 }
 
 #logout_btn{
   transition-duration: 300ms;
   text-decoration: none;
-  background-color: rgb(255, 196, 196);
+  background-color: rgb(rgb(226, 236, 234));
   padding: .25rem;
   margin: .5rem;
   border-radius: .5rem;
@@ -112,7 +113,7 @@ body{
   text-decoration: none;
   transform: scale(1.1);
   color: rgb(0, 191, 0);
-  background-color: rgb(255, 153, 153);
+  background-color: rgb(78, 134, 78);
 }
 
 .card-body{
@@ -125,18 +126,45 @@ body{
 
 #home-header{
   text-align: center;
+  margin-top: 0px;
 }
 
 #homepageImg{
   text-align: center;
-  width: 20rem;
+  width: 800px;
   padding: 1rem;
   border-radius: 50%;
   display: block;
   margin: auto;
 }
 
+/*James pick
+ #homepageImg{
+  text-align: center;
+  width: 20rem;
+  padding: 1rem;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+} */
+
+
+ #userlogo{
+  text-align: center;
+  width: 15rem;
+  padding: 1rem;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+.home_tagline{
+  color:white,
+}
+
 #plant-detail-card{
   text-align: center;
   margin:auto;
 }
+
+

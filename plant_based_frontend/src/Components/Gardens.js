@@ -5,6 +5,7 @@ import GardenCard from "./GardenCard"
 function Gardens({}) {
     const [edited, setEdited] = useState(true)
     const [GardenList, setGardens] = useState([])
+ 
 
     useEffect(() => {
         fetch('/gardens')

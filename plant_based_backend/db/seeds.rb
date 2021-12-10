@@ -19,7 +19,7 @@ plants1 = Plant.create(name: "Boston Fern", plant_type: " Nephrolepis", plant_sp
 plants2 = Plant.create(name: " Swiss Cheese Plant", plant_type: "Monstera", plant_species: "Deliciosa", image: "https://bloomscape.com/wp-content/uploads/2021/08/bloomscape_monstera_xl_clay_color-edit.jpg",
      care_instructions: "Plant in partly shady area with well-draining soil", notes: "Last pruned 10/13", garden_id: garden1.id)
 
- plants3 = Plant.create(name: "Bikini Bottom Bloomer", plant_type: "Cirly Swirly Plant", plant_species: "Underis-Wateris", image: "https://static.wikia.nocookie.net/spongebobtv/images/2/2d/123-124_Thadd%C3%A4us-Thadd%C3%A4us%27_Zierg%C3%A4rtchen.jpg/revision/latest/scale-to-width-down/300?cb=20100717235319",
+ plants3 = Plant.create(name: "Bikini Bottom Bloomer", plant_type: "Cirly Swirly Plant", plant_species: "Underis-Wateris", image: "https://vignette.wikia.nocookie.net/spongebob/images/2/24/Truth_or_Square_65.png/revision/latest?cb=20141107005657",
         care_instructions: "Submerge in seawater", notes: "Wow, this plant is awesome. 10 out of 10 would recommend", garden_id: garden1.id)
 
 plants4 = Plant.create(name: " Tiger Lily", plant_type: "Liliaceae", plant_species: "Lilium lancifolium", image: "https://backyardhabitats.org/wp-content/uploads/2014/07/P7090516.jpg",
