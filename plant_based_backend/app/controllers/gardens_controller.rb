@@ -1,4 +1,5 @@
 class GardensController < ApplicationController
+    
    
 
     def index

@@ -1,11 +1,13 @@
 import { Form } from "react-bootstrap"
 import {Link, useNavigate} from 'react-router-dom'
 import React, { useState } from "react";
+import { useParams } from "react-router-dom";
 
 
-const PlantForm=({garden, })=> {
+const PlantForm=({garden, toggle, setToggle, edited, setEdited})=> {
     let navigate = useNavigate()
     const [currentPlant, setCurrentPlant] = useState({});
+    const {garden_id} = useParams()
     const [formData, setFormData] = useState({
         name: "",
         plant_type: "",
@@ -13,7 +15,7 @@ const PlantForm=({garden, })=> {
         image: "",
         care_instructions: "",
         notes: "",
-        garden_id:""
+        garden_id:`${garden_id}`
       
 
     });
@@ -36,7 +38,9 @@ const PlantForm=({garden, })=> {
               res.json().then((plant) => {
                 setCurrentPlant(plant);
               })
-              .then(() => navigate("/plants"))
+              .then(() => navigate(`/gardens/${garden_id}`))
+              .then(() => setToggle(!toggle))
+              .then(() => setEdited(!edited))
             } else {
               res.json().then((errors) => {
                 console.error(errors);
@@ -76,10 +80,10 @@ const PlantForm=({garden, })=> {
         <input type="text" name = "notes" class="form-control" value={formData.notes} onChange={handleChange} id="notes" placeholder="Notes"/>
     </div>
 
-    <div class="form-group">
+    {/* <div class="form-group">
         <label for="name">Garden ID</label>
         <input type="text" name = "garden_id" class="form-control" value={formData.garden_id} onChange={handleChange} id="notes" placeholder="Enter an Integer"/>
-    </div>
+    </div> */}
 
     <Form.Group controlId="formFile" className="mb-3">     
     <div class="form-group">
@@ -98,7 +102,8 @@ const PlantForm=({garden, })=> {
     </div>
 
     <button type="submit" class="btn btn-primary">Submit</button>
-    <Link class="btn btn-primary" to="/plants"> Back</Link> 
+    <button onClick={ ()=> setToggle(!toggle)}> Back </button>
+    {/* <Link class="btn btn-primary" to={`/gardens/${garden_id}`}> Back</Link>  */}
     
  </form>   
         

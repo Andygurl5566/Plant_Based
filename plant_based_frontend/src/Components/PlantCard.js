@@ -4,7 +4,8 @@ import EditPlantForm from "./EditPlantForm";
 import PlantDetail from "./PlantDetail"
 import { Link } from "react-router-dom";
 
-function PlantCard({plant, onDeletePlants, edited, setEdited}) {
+
+function PlantCard({plant, onDeletePlants, edited, setEdited, handleDeletePlants}) {
     const {id} = plant
     console.log(plant)
     const [toggle, setToggle] = useState(false);

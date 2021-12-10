@@ -2,6 +2,7 @@ import {useEffect, useState} from "react"
 import {Link} from "react-router-dom"
 import GardenCard from "./GardenCard"
 
+
 function Gardens({}) {
     const [edited, setEdited] = useState(true)
     const [GardenList, setGardens] = useState([])
