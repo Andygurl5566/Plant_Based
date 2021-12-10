@@ -36,7 +36,7 @@ const Login= ({setCurrentUser}) => {
           console.log(user.name)
 
         })
-        .then(() => navigate("/gardens"))
+        .then(() => navigate("/welcome"))
       } else {
         res.json().then((errors) => {
           console.error(errors);

@@ -14,6 +14,7 @@ import PlantForm from './Components/PlantForm';
 import EditGardenForm from './Components/EditGardenForm';
 import Signup from './Components/Signup';
 import React, { useState,useEffect } from "react";
+import WelcomePage from './Components/WelcomePage';
 
 
 
@@ -24,7 +25,15 @@ function App() {
 
   console.log(currentUser);
 
-  
+  useEffect(() => {
+    fetch('/me')
+        .then((r) => r.json())
+        .then((user) => {
+          // console.log(user.name)
+          setCurrentUser(user)
+        })
+  }, [])
+
 
   useEffect(() => {
     fetch('/gardens')
@@ -46,11 +55,11 @@ function App() {
     <div id="body">
       <Navbar id="nav_bar">
           <Container id="navContent" >
+            <Link class="nav_bar_buttons" to="/welcome">hello, {`${currentUser.name}`}!</Link>
             <h1> plant-based 🌱 </h1> 
             <Link class="nav_bar_buttons" to="/"> home </Link>
             <Link class="nav_bar_buttons" to="/gardens"> my gardens </Link>
             <Link class="nav_bar_buttons" to="/plants"> my plants </Link>
-            
 
           </Container>
       </Navbar>
@@ -72,6 +81,7 @@ function App() {
           <Route path = "/edit_garden_form" element={<EditGardenForm/>}/>
           <Route path = "/gardens/:garden_id" element={<GardenDetail />}/>
           <Route path = "/plants/:plant_id" element={<PlantDetail />}/>
+          <Route path = "/welcome" element={<WelcomePage currentUser={currentUser} />}/>
         
          <Route path = "/signup" element={<Signup/>}/>
 
