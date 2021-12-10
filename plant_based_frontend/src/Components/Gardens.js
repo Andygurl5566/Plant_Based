@@ -18,8 +18,7 @@ function Gardens({}) {
             })
     }, [edited])
 
-    //currently took out because it was causeing my terminal to keep flickering
-    // GardenList inside the empty array at the end of useEffect makes the useEffect listen to any changes in GardenList. Whenever GardenList changes, useEffect runs again and rerenders the gardens.
+    // edited inside the empty array at the end of useEffect makes the useEffect listen to any changes in GardenList. Whenever GardenList changes, useEffect runs again and rerenders the gardens.
 
     function handleDeleteGarden(deletedGarden) {
         setGardens((gardens) =>
