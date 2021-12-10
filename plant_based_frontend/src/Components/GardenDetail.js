@@ -3,7 +3,7 @@ import {useEffect, useState} from "react"
 import {Link, useParams} from "react-router-dom"
 
 function GardenDetail(){
-    
+    const [edited, setEdited] = useState(true)
     const [plantList, setPlants] = useState([])
     const {garden_id} = useParams()
 
@@ -15,7 +15,7 @@ function GardenDetail(){
                 // console.log(users)
                 setPlants(garden.plants)                
             })
-    }, [])
+    }, [edited])
 
     return(
         <> 
@@ -28,7 +28,7 @@ function GardenDetail(){
         {plantList.map((plant) => {
             return (
                 <div  >
-                    <PlantCard plant={plant}/>
+                    <PlantCard edited={edited} setEdited={setEdited} plant={plant}/>
                 </div>
             )})
             }
