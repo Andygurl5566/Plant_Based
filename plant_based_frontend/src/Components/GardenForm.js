@@ -2,14 +2,15 @@ import { Form } from "react-bootstrap"
 import {Link, useNavigate} from 'react-router-dom'
 import React, { useState } from "react";
 
-const GardenForm=({currentUser, GardenList})=>{
+const GardenForm=({currentUser, garden})=>{
     let navigate = useNavigate()
-    console.log(GardenList.map(gardenItem=>{gardenItem}))
+ console.log(garden)
+
     const [currentGarden, setCurrentGarden] = useState({});
     const [formData, setFormData] = useState({
         name: "",
         location: "",
-        user_id:""
+        
 
     });
     const handleChange = (e) => {
@@ -56,13 +57,6 @@ const GardenForm=({currentUser, GardenList})=>{
         <label for="plant_type">Location</label>
         <input type="text" name="location" value={formData.location} onChange={handleChange} class="form-control" id="location" />
     </div>
-
-    <div class="form-group">
-        <label for="plant_type">User id (temporary)</label>
-        <input type="text" name="user_id" value={formData.user_id} onChange={handleChange} class="form-control" id="temp" placeholder="must be an integer" />
-    </div>
-
-
 
     <div class="form-check">
     
