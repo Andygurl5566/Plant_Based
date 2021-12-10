@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 2021_12_07_225317) do
   create_table "gardens", force: :cascade do |t|
     t.string "name"
     t.string "location"
+    t.string "image"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -10,6 +10,7 @@ const GardenForm=({currentUser, garden})=>{
     const [formData, setFormData] = useState({
         name: "",
         location: "",
+        image:""
         
 
     });
@@ -56,6 +57,11 @@ const GardenForm=({currentUser, garden})=>{
     <div class="form-group">
         <label for="plant_type">Location</label>
         <input type="text" name="location" value={formData.location} onChange={handleChange} class="form-control" id="location" />
+
+        <div class="form-group">
+        <label for="plant_type">Location</label>
+        <input type="text" name="image" value={formData.image} onChange={handleChange} class="form-control" id="image" />
+    </div>
     </div>
 
     <div class="form-check">

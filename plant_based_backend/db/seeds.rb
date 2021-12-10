@@ -8,10 +8,10 @@
 user1 = User.create(name: "James", bio:"Plant Papa", password: "12345ABC!", username: "jamesb")
 user2 = User.create(name: "Andrea", bio:"plant destroyer", password: "54321ABC!", username: "andreaf" )
 
-garden1 = Garden.create(name: "Zen Garden", location: "Patio", user_id: user1.id )
-garden2 = Garden.create(name: "My Porch Garden", location: "Front Porch", user_id: user1.id )
-garden3 = Garden.create(name: "Plants to Get Next!", location:  "TBD", user_id: user2.id )
-garden4 = Garden.create(name: "Little Garden", location:  "Office Space", user_id: user2.id )
+garden1 = Garden.create(name: "Zen Garden", location: "Patio", user_id: user1.id, image: "https://www.iamgreenwise.com/wp-content/uploads/rustic-zen-garden-cover.jpg" )
+garden2 = Garden.create(name: "My Porch Garden", location: "Front Porch", user_id: user1.id, image: "http://happygreylucky.com/wp-content/uploads/2018/outdoors/scandinavian-outdoor-balcony-02.jpg" )
+garden3 = Garden.create(name: "Plants to Get Next!", location:  "TBD", user_id: user2.id, image: "https://i1.wp.com/pappery.com/wp-content/uploads/2020/03/Popular-Indoor-Garden-Design.jpg?resize=1140%2C1140&ssl=1" )
+garden4 = Garden.create(name: "Little Garden", location:  "Office Space", user_id: user2.id, image: "http://images.traditionalhome.mdpcdn.com/sites/traditionalhome.com/files/styles/facebook_og_image/public/slide/img_formal-gardenlg_ss1.jpg?itok=slW_yB1l" )
 
 plants1 = Plant.create(name: "Boston Fern", plant_type: " Nephrolepis", plant_species: "Exaltata 'Bostoniensis", image: "https://images.esellerpro.com/3048/I/619/56/Nephrolepis%20boston%20fern-3.jpg",
      care_instructions: "Keep in a shaded area, and water often", notes: "Non toxic for cats, dogs which is great! I don't have to worry about fluffy getting into this plant", garden_id: garden1.id)
