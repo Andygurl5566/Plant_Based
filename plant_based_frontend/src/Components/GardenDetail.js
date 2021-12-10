@@ -16,7 +16,7 @@ function GardenDetail(){
         console.log(toggle)
     }
 
-    function handleDeletePlants(deletedPlants) {
+    function onDeletePlants(deletedPlants) {
         setPlants((plants) =>
           plants.filter((plants) => plants.id !== deletedPlants.id)
         );
@@ -45,7 +45,7 @@ function GardenDetail(){
         {plantList.map((plant) => {
             return (
                 <div  >
-                    <PlantCard edited={edited} setEdited={setEdited} plant={plant} handleDeletePlants={handleDeletePlants}/>
+                    <PlantCard edited={edited} setEdited={setEdited} plant={plant} onDeletePlants={onDeletePlants}/>
                 </div>
             )})
             }
