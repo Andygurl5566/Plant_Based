@@ -2,19 +2,20 @@ import {useEffect, useState} from "react"
 import {Link} from "react-router-dom"
 import GardenCard from "./GardenCard"
 
-function Gardens() {
-    const [edited, setEdited] = useState(true)
-    const [GardenList, setGardens] = useState([])
+function Gardens({edited, setEdited, GardenList, setGardens}) {
+//     const [edited, setEdited] = useState(true)
+//     const [GardenList, setGardens] = useState([])
 
-    useEffect(() => {
-        fetch('/gardens')
-            .then((r) => r.json())
-            .then((gardens) => {
-                // console.log(Gardens)
-                setGardens(gardens)
-                console.log(gardens)
-            })
-    }, [edited])
+//     useEffect(() => {
+//         fetch('/gardens')
+//             .then((r) => r.json())
+//             .then((gardens) => {
+//                 // console.log(Gardens)
+//                 setGardens(gardens)
+//                 console.log(gardens)
+//             })
+//     }, [edited])
+
     //currently took out because it was causeing my terminal to keep flickering
     // GardenList inside the empty array at the end of useEffect makes the useEffect listen to any changes in GardenList. Whenever GardenList changes, useEffect runs again and rerenders the gardens.
 
