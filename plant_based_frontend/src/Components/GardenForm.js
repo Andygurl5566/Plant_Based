@@ -2,9 +2,9 @@ import { Form } from "react-bootstrap"
 import {Link, useNavigate} from 'react-router-dom'
 import React, { useState } from "react";
 
-const GardenForm=({currentUser})=>{
+const GardenForm=({currentUser, garden})=>{
     let navigate = useNavigate()
-    console.log(currentUser)
+    console.log(garden)
     const [currentGarden, setCurrentGarden] = useState({});
     const [formData, setFormData] = useState({
         name: "",
