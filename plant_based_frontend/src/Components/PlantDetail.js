@@ -20,7 +20,7 @@ function PlantDetail() {
 
 
     return (
-        <Card style={{ width: '40rem' }}>
+        <Card style={{ width: '40rem' }} id="plant-detail-card">
             <Card.Body>
                 <Card.Img src={plant.image}/>
                 <Card.Title> {plant.name}</Card.Title>

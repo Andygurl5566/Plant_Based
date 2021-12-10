@@ -23,6 +23,16 @@ class PlantsController < ApplicationController
         end
     end
 
+    def update
+        plant = Plant.find_by(id: params[:id])
+        if plant
+            plant.update(plant_params)
+            render json: plant, status:200
+        else 
+            render json: { error: "plant not found"}, status: :not_found
+        end
+    end
+
     def destroy
         plant = Plant.find_by(id: params[:id])
         if plant 
