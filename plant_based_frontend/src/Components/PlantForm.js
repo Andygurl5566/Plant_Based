@@ -3,7 +3,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import React, { useState } from "react";
 
 
-const PlantForm=()=> {
+const PlantForm=({garden, })=> {
     let navigate = useNavigate()
     const [currentPlant, setCurrentPlant] = useState({});
     const [formData, setFormData] = useState({
