@@ -30,8 +30,6 @@ const Login= ({setCurrentUser}) => {
       console.log(res)
       if (res.ok) {
         res.json().then((user) => {
-          // event.target.reset()
-          //thought this would reset the form but it doesn't seem to
           setCurrentUser(user); 
           console.log(user.name)
 
@@ -62,7 +60,7 @@ const Login= ({setCurrentUser}) => {
       <div class="form-check">
       
       </div>
-      <button class="btn btn-primary" type="submit"><Link to="/gardens" class="redirect2">Submit</Link></button> 
+      <button class="btn btn-primary" type="submit">Submit</button> 
       {/* /* Need to find different way to redirect login */}
       <Link class="btn btn-primary" to="/"> Back</Link> 
     </form>

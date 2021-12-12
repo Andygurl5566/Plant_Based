@@ -1,11 +1,14 @@
 import {Link} from 'react-router-dom'
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 
 
 
 
 
 function Home ({setCurrentUser}) {
+  let navigate = useNavigate()
 
     const handleLogout = () => {
         fetch('/logout', {method: "DELETE"})
@@ -16,6 +19,7 @@ function Home ({setCurrentUser}) {
                 console.log('you logged out');
               }
             })
+            .then(() => navigate("/"))
       }
 
 
@@ -34,7 +38,7 @@ function Home ({setCurrentUser}) {
 
           <button id="login_btn" > <Link class="redirect" to="/login"> Login </Link></button>
           <button id="signup_btn"> <Link class="redirect" to="/signup"> Signup </Link></button>
-          <button id="logout_btn" onClick={handleLogout}> <Link class="redirect" to="/login"> Logout </Link></button>
+          <button id="logout_btn" onClick={handleLogout}> Logout </button>
 
           
           
