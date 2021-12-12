@@ -32,7 +32,6 @@ function Home ({setCurrentUser}) {
 
         <div id="login-buttons-div">
 
-        {/* <h5 class="home_tagline">Welcome to plant based , the premiere garden management app</h5> */}
           <button id="login_btn" > <Link class="redirect" to="/login"> Login </Link></button>
           <button id="signup_btn"> <Link class="redirect" to="/signup"> Signup </Link></button>
           <button id="logout_btn" onClick={handleLogout}> <Link class="redirect" to="/login"> Logout </Link></button>

@@ -68,9 +68,7 @@ useEffect(() => {
 
       <Container>
         <Routes>
-          <Route path="/" element={<Home 
-          
-          />}/>
+          <Route path="/" element={<Home />}/>
           <Route path="/gardens" element={<Gardens currentUser={currentUser} 
           edited={edited} setEdited={setEdited} GardenList={GardenList} setGardens={setGardens}/>}/>
           <Route path="/plants" element={<Plants/>}/>
@@ -83,6 +81,7 @@ useEffect(() => {
           <Route path = "/gardens/:garden_id" element={<GardenDetail />}/>
           <Route path = "/plants/:plant_id" element={<PlantDetail />}/>
           <Route path = "/welcome" element={<WelcomePage currentUser={currentUser} />}/>
+
         
          <Route path = "/signup" element={<Signup/>}/>
 
