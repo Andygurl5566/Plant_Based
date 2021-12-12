@@ -7,7 +7,6 @@ const EditPlantForm=({plant, id, edited, setEdited})=>{
     const [currentPlant, setCurrentPlant] = useState({});
     const [formData, setFormData] = useState({
         name: "",
-        plant_type: "",
         plant_species: "",
         image: "",
         care_instructions: "",
@@ -58,11 +57,6 @@ const EditPlantForm=({plant, id, edited, setEdited})=>{
     <div class="form-group">
         <label for="name">Plant Name</label>
         <input type="text" class="form-control" name="name" value={formData.name} onChange={handleChange} />
-    </div>
-
-    <div class="form-group">
-        <label for="plant_type">Plant Type</label>
-        <input type="text" name="plant_type" value={formData.plant_type} onChange={handleChange} class="form-control" id="type" />
     </div>
 
     <div class="form-group">
