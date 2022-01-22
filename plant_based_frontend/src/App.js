@@ -56,7 +56,7 @@ useEffect(() => {
     <div id="body">
       <Navbar id="nav_bar">
           <Container id="navContent" >
-            <Link class="nav_bar_buttons" to="/welcome">Hello, {`${currentUser.name}`}!</Link>
+            <Link class="nav_bar_buttons" to="/welcome"> {currentUser.name === undefined ? "" : `Hello, ${currentUser.name}!`}</Link>
             <h1> plant-based 🌱 </h1> 
             <Link class="nav_bar_buttons" to="/"> home </Link>
             <Link class="nav_bar_buttons" to="/gardens"> my gardens </Link>
@@ -69,12 +69,9 @@ useEffect(() => {
       <Container>
         <Routes>
           <Route path="/" element={<Home />}/>
-          <Route path="/gardens" element={<Gardens currentUser={currentUser} 
-          edited={edited} setEdited={setEdited} GardenList={GardenList} setGardens={setGardens}/>}/>
+          <Route path="/gardens" element={<Gardens currentUser={currentUser} edited={edited} setEdited={setEdited} GardenList={GardenList} setGardens={setGardens}/>}/>
           <Route path="/plants" element={<Plants/>}/>
-          <Route path="/login" element={<Login 
-          setCurrentUser={setCurrentUser}
-          />}/>
+          <Route path="/login" element={<Login setCurrentUser={setCurrentUser}/>}/>
           <Route path = "/garden_form" element={<GardenForm currentUser={currentUser} GardenList={GardenList}/>}/>
           <Route path = "/plant_form" element={<PlantForm/>}/> 
           <Route path = "/edit_garden_form" element={<EditGardenForm/>}/>

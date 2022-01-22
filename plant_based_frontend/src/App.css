@@ -79,25 +79,25 @@ body{
 #login_btn:hover {
   text-decoration: none;
   transform: scale(1.1);
-  color: rgb(0, 191, 0);
+  color: white;
+
   background-color: rgb(78, 134, 78);
 }
 #signup_btn{
   transition-duration: 300ms;
   text-decoration: none;
-  background-color: rgb(226, 236, 234);
   padding: .25rem;
   margin: .5rem;
   border-radius: .5rem;
-  color: white
+  
  
 }
 
 #signup_btn:hover {
   text-decoration: none;
   transform: scale(1.1);
-  color: rgb(0, 191, 0);
   background-color: rgb(78, 134, 78);
+  color: white;
 }
 
 #logout_btn{
@@ -112,8 +112,8 @@ body{
 #logout_btn:hover {
   text-decoration: none;
   transform: scale(1.1);
-  color: rgb(0, 191, 0);
   background-color: rgb(78, 134, 78);
+  color: white;
 }
 
 .card-body{
@@ -138,15 +138,6 @@ body{
   margin: auto;
 }
 
-/*James pick
- #homepageImg{
-  text-align: center;
-  width: 20rem;
-  padding: 1rem;
-  border-radius: 50%;
-  display: block;
-  margin: auto;
-} */
 
 
  #userlogo{

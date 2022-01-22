@@ -61,8 +61,8 @@ const GardenForm=({currentUser, garden})=>{
     <div class="form-check">
     
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-   <Link class="btn btn-primary" to="/gardens"> Back</Link>
+    <button type="submit" class="entrancebtn">Submit</button>
+    <button class="entrancebtn" onClick={ ()=>{navigate("/gardens")}}> Back</button>
    
 
  </form>   

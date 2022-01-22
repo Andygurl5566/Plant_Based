@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom";
 
 //LOGIN FUNCTIONALITY
 
 const Signup= () => {
   
+  let navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState({});
   const [formData, setFormData] = useState({
     username: "",
@@ -43,6 +43,10 @@ const Signup= () => {
     });
   }
 
+  function navigateBack(){
+    navigate("/")
+}
+
 //JSX BEGINGS HERE
 
     return ( 
@@ -62,8 +66,8 @@ const Signup= () => {
       <div class="form-check">
       
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-      <Link class="btn btn-primary" to="/"> Back</Link> 
+      <button type="submit" class="entrancebtn">Submit</button>
+      <button class="entrancebtn" onClick={navigateBack} type="submit">Back</button> 
     </form>
 </>
 )

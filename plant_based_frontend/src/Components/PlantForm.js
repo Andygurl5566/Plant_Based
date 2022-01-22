@@ -95,7 +95,7 @@ const PlantForm=({garden, toggle, setToggle, edited, setEdited})=> {
     
     </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="entrancebtn">Submit</button>
     <button onClick={ ()=> setToggle(!toggle)}> Back </button>
     {/* <Link class="btn btn-primary" to={`/gardens/${garden_id}`}> Back</Link>  */}
     

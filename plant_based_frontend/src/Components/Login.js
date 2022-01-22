@@ -44,6 +44,10 @@ const Login= ({setCurrentUser}) => {
   
   }
 
+  function navigateBack(){
+      navigate("/")
+  }
+
     return ( 
 <>
     <h1>Login</h1>  
@@ -55,14 +59,13 @@ const Login= ({setCurrentUser}) => {
       </div>
       <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="text" name="password" value={formData.password} onChange={handleChange} class="form-control" id="exampleInputPassword1" placeholder="Password"/>
+        <input type="password" name="password" value={formData.password} onChange={handleChange} class="form-control" id="exampleInputPassword1" placeholder="Password"/>
       </div>
       <div class="form-check">
       
       </div>
-      <button class="btn btn-primary" type="submit">Submit</button> 
-      {/* /* Need to find different way to redirect login */}
-      <Link class="btn btn-primary" to="/"> Back</Link> 
+      <button class="entrancebtn" type="submit">Submit</button> 
+      <button class="entrancebtn" onClick={navigateBack} type="submit">Back</button> 
     </form>
 </>
 )}

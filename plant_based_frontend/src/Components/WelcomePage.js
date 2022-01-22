@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function WelcomePage() {
+  
 
+    let navigate = useNavigate()
     const [currentUser, setCurrentUser] = useState({});
     const [contentLoaded, setContentLoaded] = useState(false);
 
@@ -25,8 +28,11 @@ function WelcomePage() {
    
         <h5>Username: {`${currentUser.username}`}</h5>
         <h5>Bio: {currentUser.bio}</h5>
-        {contentLoaded?<h5>You have: {currentUser.gardens.length} gardens</h5>: null}
+        {contentLoaded ? <h5>You have: {currentUser.gardens.length} gardens</h5>: null}
+        
         </div>
+        <button class="entrancebtn2" onClick={ ()=>{navigate("/gardens")}}> View Gardens</button>
+        {/* <button class="entrancebtn"> Plants</button> */}
         </div> 
     )
 }
