@@ -1,9 +1,10 @@
 class GardensController < ApplicationController
+    
    
 
     def index
         garden = current_user.gardens
-        render json: garden
+        render json: garden.order(created_at: :desc)
     end
 
     def show
@@ -16,7 +17,9 @@ class GardensController < ApplicationController
     end
 
     def create
-        garden = Garden.create(garden_params)
+        garden = Garden.new(garden_params)
+        garden.user = @current_user
+        garden.save
         if garden.valid? 
             render json: garden, status: :created
         else 
@@ -49,7 +52,7 @@ class GardensController < ApplicationController
     private
 
     def garden_params
-        params.permit(:name, :location, :user_id)
+        params.permit(:name, :location)
 
     end
 

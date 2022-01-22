@@ -4,8 +4,10 @@ import EditPlantForm from "./EditPlantForm";
 import PlantDetail from "./PlantDetail"
 import { Link } from "react-router-dom";
 
-function PlantCard({plant, onDeletePlants}) {
+
+function PlantCard({plant, onDeletePlants, edited, setEdited, handleDeletePlants}) {
     const {id} = plant
+    console.log(plant)
     const [toggle, setToggle] = useState(false);
     const [currentPlant, setCurrentPlant] = useState({});
     const [formData, setFormData] = useState({
@@ -16,7 +18,7 @@ function PlantCard({plant, onDeletePlants}) {
         image: "image",
         care_instructions: "care_instructions",
         notes: "notes",
-        garden_id: "garden_id"
+        garden_id: `${plant.garden_id}`
     })
 
 //toggle functionality
@@ -28,6 +30,12 @@ function handleToggle(){
 }
 
 //    Delete functionality
+function confirmDelete(){
+  let result = window.confirm("delete this plant?")
+  if (result) {
+      handleDeletePlants()
+  }
+}
 function handleDeletePlants() {
     fetch(`/plants/${id}`, {
       method: "DELETE",
@@ -49,10 +57,14 @@ function handleDeletePlants() {
                 <Card.Subtitle>{plant.plant_type}</Card.Subtitle>
                 <Card.Text>{plant.notes}</Card.Text>
                 <button
-                class= "redirect_btn"> <Link class="redirect" to={`/gardens/${id}`}> View </Link></button> 
+                class= "redirect_btn"> <Link class="redirect" to={`/plants/${id}`}> View </Link></button> 
                 <button onClick={handleToggle}class ="redirect_btn">{toggle==false? "Edit":"Close"}</button>
-                <button onClick={handleDeletePlants} class ="redirect_btn">Delete</button>
-                {toggle == false? "" : <EditPlantForm plant={plant} id={id}/> }
+                <button onClick={confirmDelete} class ="redirect_btn">Delete</button>
+                {toggle == false? "" : <EditPlantForm 
+                edited={edited}
+                setEdited={setEdited}
+                plant={plant} 
+                id={id}/> }
                {/* <button> {toggle==false? "Edit":"Close"}</button> */}
 
             </Card.Body>

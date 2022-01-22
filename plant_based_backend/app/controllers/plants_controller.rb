@@ -2,15 +2,15 @@ class PlantsController < ApplicationController
 
     def index
         plants = current_user.plants
-        render json: plants
+        render json: plants.order(created_at: :desc)
     end
 
     def show
-        plant = Plant.find_by(id: params[:id])
+        plant = current_user.plants.find_by(id: params[:id])
         if plant 
-            render json: current_user.plant
+            render json: plant
         else 
-            render json: {error: "plant not found"}, status: :not_found
+            render json: {error: "Plant not found"}, status: :not_found
         end
     end
 
@@ -20,6 +20,16 @@ class PlantsController < ApplicationController
             render json: plant, status: :created
         else 
             render json: { error: plant.errors.full_messages}, status: :unprocessable_entity
+        end
+    end
+
+    def update
+        plant = Plant.find_by(id: params[:id])
+        if plant
+            plant.update(plant_params)
+            render json: plant, status:200
+        else 
+            render json: { error: "plant not found"}, status: :not_found
         end
     end
 
@@ -36,7 +46,7 @@ class PlantsController < ApplicationController
     private
 
     def plant_params
-        params.permit(:name, :plant_type, :plant_species, :image, :care_instructions, :notes, :garden_id)
+        params.permit(:name, :plant_species, :image, :care_instructions, :notes, :garden_id)
 
     end
 

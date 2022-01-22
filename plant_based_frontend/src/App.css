@@ -38,18 +38,22 @@ body{
 
 #nav_bar {
   position: sticky;
-  top: 2rem;
+  top: 0rem;
   z-index: +1;
   margin: auto;
+  padding-left: 10rem ;
   margin-bottom: 1rem;
   background-color: white;
   box-sizing: content-box;
-  width: 60%;
+  width: 100%;
   height: 2rem;
   border: solid rgb(255, 255, 255) 0.5rem;
   padding: 1rem;
   border-radius: 1.5rem;
 
+}
+#navContent {
+  width: 60%;
 }
 
 .nav_bar_buttons {
@@ -66,7 +70,7 @@ body{
 #login_btn{
   transition-duration: 300ms;
   text-decoration: none;
-  background-color: rgb(212, 255, 212);
+  background-color: rgb(rgb(226, 236, 234));
   padding: .25rem;
   margin: .5rem;
   border-radius: .5rem;
@@ -76,15 +80,16 @@ body{
   text-decoration: none;
   transform: scale(1.1);
   color: rgb(0, 191, 0);
-  background-color: rgb(163, 255, 163);
+  background-color: rgb(78, 134, 78);
 }
 #signup_btn{
   transition-duration: 300ms;
   text-decoration: none;
-  background-color: rgb(215, 220, 255);
+  background-color: rgb(226, 236, 234);
   padding: .25rem;
   margin: .5rem;
   border-radius: .5rem;
+  color: white
  
 }
 
@@ -92,13 +97,13 @@ body{
   text-decoration: none;
   transform: scale(1.1);
   color: rgb(0, 191, 0);
-  background-color: rgb(155, 165, 255);
+  background-color: rgb(78, 134, 78);
 }
 
 #logout_btn{
   transition-duration: 300ms;
   text-decoration: none;
-  background-color: rgb(255, 196, 196);
+  background-color: rgb(rgb(226, 236, 234));
   padding: .25rem;
   margin: .5rem;
   border-radius: .5rem;
@@ -108,9 +113,58 @@ body{
   text-decoration: none;
   transform: scale(1.1);
   color: rgb(0, 191, 0);
-  background-color: rgb(255, 153, 153);
+  background-color: rgb(78, 134, 78);
 }
 
 .card-body{
   border-radius: 1.5rem;
 }
+
+#login-buttons-div{
+  text-align: center;
+}
+
+#home-header{
+  text-align: center;
+  margin-top: 0px;
+}
+
+#homepageImg{
+  text-align: center;
+  width: 800px;
+  padding: 1rem;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+/*James pick
+ #homepageImg{
+  text-align: center;
+  width: 20rem;
+  padding: 1rem;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+} */
+
+
+ #userlogo{
+  text-align: center;
+  width: 15rem;
+  padding: 1rem;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
+}
+
+.home_tagline{
+  color:white,
+}
+
+#plant-detail-card{
+  text-align: center;
+  margin:auto;
+}
+
+

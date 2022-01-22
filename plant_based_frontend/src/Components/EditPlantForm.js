@@ -2,17 +2,16 @@ import { Form } from "react-bootstrap"
 import {Link} from 'react-router-dom'
 import React, { useState } from "react";
 
-const EditPlantForm=({plant, id})=>{
+const EditPlantForm=({plant, id, edited, setEdited})=>{
 
     const [currentPlant, setCurrentPlant] = useState({});
     const [formData, setFormData] = useState({
         name: "",
-        plant_type: "",
         plant_species: "",
         image: "",
         care_instructions: "",
         notes: "",
-        garden_id: ""
+        garden_id: `${plant.garden_id}`
 
     });
     const handleChange = (e) => {
@@ -34,7 +33,8 @@ const EditPlantForm=({plant, id})=>{
               console.log(res)
               if (res.ok) {
                 res.json().then((plant) => {
-                  setCurrentPlant(plant);
+                  setCurrentPlant(plant)
+                  setEdited(!edited)
                 })
                
                 
@@ -60,11 +60,6 @@ const EditPlantForm=({plant, id})=>{
     </div>
 
     <div class="form-group">
-        <label for="plant_type">Plant Type</label>
-        <input type="text" name="plant_type" value={formData.plant_type} onChange={handleChange} class="form-control" id="type" />
-    </div>
-
-    <div class="form-group">
         <label for="species">Species</label>
         <input type="text" name="plant_species" value={formData.plant_species} onChange={handleChange} class="form-control" id="species" />
     </div>
@@ -79,15 +74,15 @@ const EditPlantForm=({plant, id})=>{
         <input type="text" name = "notes" class="form-control" value={formData.notes} onChange={handleChange} id="notes" placeholder="Notes"/>
     </div>
 
-    <div class="form-group">
+    {/* <div class="form-group">
         <label for="name">Garden ID</label>
         <input type="text" name = "garden_id" class="form-control" value={formData.garden_id} onChange={handleChange} id="notes" placeholder="Enter an Integer"/>
-    </div>
+    </div> */}
 
     <Form.Group controlId="formFile" className="mb-3">     
     <div class="form-group">
         <label for="name">Image </label>
-        <input type="file" name="image" value={formData.image} onChange={handleChange} class="form-control" id="image" />
+        <input type="text" name="image" value={formData.image} onChange={handleChange} class="form-control" id="image" />
     </div>
     </Form.Group>
     

@@ -8,16 +8,26 @@
 user1 = User.create(name: "James", bio:"Plant Papa", password: "12345ABC!", username: "jamesb")
 user2 = User.create(name: "Andrea", bio:"plant destroyer", password: "54321ABC!", username: "andreaf" )
 
-garden1 = Garden.create(name: "Zen Garden", location: "LA", user_id: user1.id )
-garden2 = Garden.create(name: "Flower Garden", location: "NY", user_id: user1.id )
-garden3 = Garden.create(name: "Rose Garden", location:  "Front Room", user_id: user2.id )
-garden4 = Garden.create(name: "Bunion Garden", location:  "IL", user_id: user2.id )
+garden1 = Garden.create(name: "Zen Garden", location: "Patio", user_id: user1.id )
+garden2 = Garden.create(name: "My Porch Garden", location: "Front Porch", user_id: user1.id )
+garden3 = Garden.create(name: "Plants to Get Next!", location:  "TBD", user_id: user2.id )
+garden4 = Garden.create(name: "Little Garden", location:  "Office Space", user_id: user2.id )
 
-plants1 = Plant.create(name: " Plant1", plant_type: "great plant1", plant_species: "awesome species", image: "https://previews.123rf.com/images/chfonk/chfonk1707/chfonk170700016/81507535-dark-green-leaves-of-monstera-or-split-leaf-philodendron-monstera-deliciosa-the-tropical-foliage-pla.jpg", care_instructions: "instructions", notes: "some notes..", garden_id: garden1.id)
+plants1 = Plant.create(name: "Boston Fern", plant_type: " Nephrolepis", plant_species: "Exaltata 'Bostoniensis", image: "https://images.esellerpro.com/3048/I/619/56/Nephrolepis%20boston%20fern-3.jpg",
+     care_instructions: "Keep in a shaded area, and water often", notes: "Non toxic for cats, dogs which is great! I don't have to worry about fluffy getting into this plant", garden_id: garden1.id)
 
-plants2 = Plant.create(name: " Plant2", plant_type: "great plant2", plant_species: "awesome species", image: "https://bloomscape.com/wp-content/uploads/2021/08/bloomscape_monstera_xl_clay_color-edit.jpg", care_instructions: "instructions", notes: "some notes..", garden_id: garden1.id)
+plants2 = Plant.create(name: " Swiss Cheese Plant", plant_type: "Monstera", plant_species: "Deliciosa", image: "https://bloomscape.com/wp-content/uploads/2021/08/bloomscape_monstera_xl_clay_color-edit.jpg",
+     care_instructions: "Plant in partly shady area with well-draining soil", notes: "Last pruned 10/13", garden_id: garden1.id)
 
+ plants3 = Plant.create(name: "Bikini Bottom Bloomer", plant_type: "Cirly Swirly Plant", plant_species: "Underis-Wateris", image: "https://vignette.wikia.nocookie.net/spongebob/images/2/24/Truth_or_Square_65.png/revision/latest?cb=20141107005657",
+        care_instructions: "Submerge in seawater", notes: "Wow, this plant is awesome. 10 out of 10 would recommend", garden_id: garden1.id)
 
-plants3 = Plant.create(name: " Plant3", plant_type: "great plant3", plant_species: "awesome species", image: "an image", care_instructions: "instructions", notes: "some notes..", garden_id: garden3.id)
+plants4 = Plant.create(name: " Tiger Lily", plant_type: "Liliaceae", plant_species: "Lilium lancifolium", image: "https://backyardhabitats.org/wp-content/uploads/2014/07/P7090516.jpg",
+        care_instructions: "Plant in full to partly sunny areas in loamy, well-draining soil.", notes: "Planted on Sept 14th, 2021", garden_id: garden1.id)
+       
 
-plants4 = Plant.create(name: " Plant 4", plant_type: "great plant4", plant_species: "awesome species", image: "an image", care_instructions: "instructions", notes: "some notes..", garden_id: garden3.id)
+plants5 = Plant.create(name: "Pilea Plant", plant_type: "Pilea", plant_species: "Peperomioides", image: "https://cdn.apartmenttherapy.info/image/fetch/f_auto,q_auto:eco/https://storage.googleapis.com/gen-atmedia/2/2017/04/2c3a3d86d24920f43a992dbbc48eab5bd45c9e93.jpeg", 
+    care_instructions: "Keep alive", notes: "I've kept this plant alive for 13 hours now! The pride is feel in insurmountable #winning", garden_id: garden3.id)
+
+plants6 = Plant.create(name: "Parlor Plant", plant_type: "great plant4", plant_species: "awesome species", image: "https://bloomscape.com/wp-content/uploads/2020/08/bloomscape_parlor-palmloomscape_stone.jpg?ver=279265", 
+    care_instructions: "Likes inderect sunlight, water sparingly", notes: "Really liking how easy the maintnance is for this plant!", garden_id: garden3.id)

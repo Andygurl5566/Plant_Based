@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
     resources :gardens, only: [:index, :show, :create, :destroy, :update]
     resources :users, only: [:index, :show, :create]
-    resources :plants, only: [:index, :show, :create, :destroy]
+    resources :plants, only: [:index, :show, :create, :update, :destroy]
     
     post "/signup", to: "users#create"
     get "/me", to: "users#show"

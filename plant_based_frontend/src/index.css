@@ -36,3 +36,23 @@ body {
    margin: 10px;
    
 }
+
+#welcome_message{
+  text-align: center;
+  margin:auto;
+  font-size: 1.5rem;
+}
+
+#about-me{
+  padding-top: 50px;
+  text-align: center;
+  margin:auto;
+}
+
+#bio_div{
+  padding-top: 30px;
+}
+
+.home_tagline{
+  color:white,
+}

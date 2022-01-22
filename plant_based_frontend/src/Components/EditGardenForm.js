@@ -2,13 +2,13 @@ import { Form } from "react-bootstrap"
 import {Link} from 'react-router-dom'
 import React, { useState } from "react";
 
-const EditGardenForm=({garden, id})=>{
+const EditGardenForm=({garden, id, setEdited, edited})=>{
 
     const [currentGarden, setCurrentGarden] = useState({});
     const [formData, setFormData] = useState({
         name: "",
         location: "",
-        user_id:""
+        user_id: `${garden.user_id}`
 
     });
     const handleChange = (e) => {
@@ -16,7 +16,7 @@ const EditGardenForm=({garden, id})=>{
           ...formData,
           [e.target.name]: e.target.value,
         });
-      };
+    };
       const handleSubmit = (event) => {
         event.preventDefault();
         fetch(`/gardens/${id}`, {
@@ -30,7 +30,10 @@ const EditGardenForm=({garden, id})=>{
               console.log(res)
               if (res.ok) {
                 res.json().then((garden) => {
-                  setCurrentGarden(garden);
+                  // event.target.reset() 
+                  // doesnt work, not sure why
+                  setCurrentGarden(garden)
+                  setEdited(!edited)
                 })
                 // .then(json =>{
                 //     getUpdatedGarden()
@@ -66,10 +69,10 @@ const EditGardenForm=({garden, id})=>{
         <input type="text" name="location" value={formData.location} onChange={handleChange} class="form-control" id="location" placeholder={garden.location} />
     </div>
 
-    <div class="form-group">
+    {/* <div class="form-group">
         <label for="plant_type">User id (temporary)</label>
         <input type="text" name="user_id" value={formData.user_id} onChange={handleChange} class="form-control" id="temp" placeholder={garden.user_id}/>
-    </div>
+    </div> */}
 
 
 

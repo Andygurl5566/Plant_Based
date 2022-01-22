@@ -2,9 +2,11 @@ import {useEffect, useState} from "react"
 import {Link} from "react-router-dom"
 import GardenCard from "./GardenCard"
 
-function Gardens() {
 
+function Gardens({}) {
+    const [edited, setEdited] = useState(true)
     const [GardenList, setGardens] = useState([])
+ 
 
     useEffect(() => {
         fetch('/gardens')
@@ -12,8 +14,11 @@ function Gardens() {
             .then((gardens) => {
                 // console.log(Gardens)
                 setGardens(gardens)
+                console.log(gardens)
             })
-    }, [])
+    }, [edited])
+
+    // edited inside the empty array at the end of useEffect makes the useEffect listen to any changes in GardenList. Whenever GardenList changes, useEffect runs again and rerenders the gardens.
 
     function handleDeleteGarden(deletedGarden) {
         setGardens((gardens) =>
@@ -21,7 +26,7 @@ function Gardens() {
         );
       }
 
-
+      
 
     return ( 
         <>
@@ -33,7 +38,8 @@ function Gardens() {
             return (
                 <div id="GardenCardsDiv">
                     <GardenCard 
-                    garden={garden}
+                    setEdited={setEdited} edited={edited}
+                    garden={garden} 
                     onDeleteGarden={handleDeleteGarden}
                     />
                 </div>

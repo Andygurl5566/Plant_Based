@@ -2,6 +2,8 @@ import {useEffect, useState} from "react"
 import PlantCard from "./PlantCard"
 import {Link} from 'react-router-dom'
 
+
+
 function Plants () {
 
     const [plantList, setPlants] = useState([])
@@ -38,6 +40,7 @@ function Plants () {
         {plantList.map((plant) => {
             return (
                 <div>
+                    
                     <PlantCard plant={plant}
                     onDeletePlants={handleDeletePlants}/>
                 </div>
