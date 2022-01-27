@@ -9,7 +9,7 @@ Features include :
 - Detail View
 - Bootstraps  and Custom CSS
 
-#User Story
+# User Story
 As a user, you can use this application to login and manage your plants and gardens in the following ways:
 
 - Create an account to save your data
